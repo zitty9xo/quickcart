@@ -1,4 +1,4 @@
-import { products } from "../data/product.js/product";
+import { products } from "../data/product.js/product.js";
 import ProductCard from "./ProductCard";
 import "../styles/ProductList.css";
 
