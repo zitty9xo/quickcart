@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './components/Header';
 import ProductList from './components/ProductList';
-import { products } from './data/products';
+import { products } from './data/product.js/product';
 import './styles/App.css';
 
 function App() {

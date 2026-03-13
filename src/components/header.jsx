@@ -1,13 +1,17 @@
-import React from 'react';
-import '../styles/Header.css';
+import "../styles/Header.css";
 
-function Header() {
+function Header({ cartItemCount, onCartClick }) {
+
   return (
     <header className="header">
-      <div className="header-container">
-        <h1 className="header-title">🛒 QuickCart</h1>
-        <p className="header-subtitle">Your one-stop shop for everything</p>
+
+      <h1 className="logo">QuickCart</h1>
+
+      <div className="cart-icon" onClick={onCartClick}>
+        🛒
+        <span className="cart-count">{cartItemCount}</span>
       </div>
+
     </header>
   );
 }
