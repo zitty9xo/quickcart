@@ -1,24 +1,18 @@
+import { useCart } from "../contexts";
 import "../styles/CartSidebar.css";
 
-function CartSidebar({
-  isOpen,
-  cart,
-  onClose,
-  onIncrease,
-  onDecrease,
-  onRemove,
-  totalPrice
-}) {
+function CartSidebar() {
+  const { isCartOpen, cart, toggleCart, updateQuantity, removeFromCart, getTotalPrice } = useCart();
 
   return (
 
-    <div className={`cart-sidebar ${isOpen ? "open" : ""}`}>
+    <div className={`cart-sidebar ${isCartOpen ? "open" : ""}`}>
 
       <div className="cart-header">
 
         <h2>Your Cart</h2>
 
-        <button onClick={onClose}>X</button>
+        <button onClick={toggleCart}>X</button>
 
       </div>
 
@@ -47,7 +41,7 @@ function CartSidebar({
                 <div className="qty-controls">
 
                   <button
-                    onClick={() => onDecrease(item.id)}
+                    onClick={() => updateQuantity(item.id, item.quantity - 1)}
                   >
                     -
                   </button>
@@ -55,7 +49,7 @@ function CartSidebar({
                   <span>{item.quantity}</span>
 
                   <button
-                    onClick={() => onIncrease(item.id)}
+                    onClick={() => updateQuantity(item.id, item.quantity + 1)}
                   >
                     +
                   </button>
@@ -64,7 +58,7 @@ function CartSidebar({
 
                 <button
                   className="remove-btn"
-                  onClick={() => onRemove(item.id)}
+                  onClick={() => removeFromCart(item.id)}
                 >
                   Remove
                 </button>
@@ -76,7 +70,7 @@ function CartSidebar({
           ))}
 
           <h3 className="total">
-            Total: ${totalPrice}
+            Total: ${getTotalPrice().toFixed(2)}
           </h3>
 
         </>

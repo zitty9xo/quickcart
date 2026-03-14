@@ -2,7 +2,7 @@ import React from 'react';
 import ProductList from './ProductList';
 import '../styles/HomePage.css';
 
-function HomePage({ products, onAddToCart, searchTerm }) {
+function HomePage({ products, searchTerm }) {
   // Filter products based on searchTerm
   const filteredProducts = products.filter(p => 
     p.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -32,7 +32,7 @@ function HomePage({ products, onAddToCart, searchTerm }) {
         </div>
       ) : (
         /* Render ProductList with filtered products */
-        <ProductList products={filteredProducts} onAddToCart={onAddToCart} />
+        <ProductList products={filteredProducts} />
       )}
     </div>
   );

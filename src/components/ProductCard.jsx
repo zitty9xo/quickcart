@@ -1,6 +1,8 @@
+import { useCart } from "../contexts";
 import "../styles/ProductCard.css";
 
-function ProductCard({ product, onAddToCart }) {
+function ProductCard({ product }) {
+  const { addToCart } = useCart();
 
   return (
     <div className="product-card">
@@ -15,7 +17,7 @@ function ProductCard({ product, onAddToCart }) {
 
       <button
         className="add-btn"
-        onClick={() => onAddToCart(product)}
+        onClick={() => addToCart(product)}
       >
         Add to Cart
       </button>

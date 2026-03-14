@@ -1,8 +1,7 @@
-import { products } from "../data/product.js/product.js";
 import ProductCard from "./ProductCard";
 import "../styles/ProductList.css";
 
-function ProductList({ onAddToCart }) {
+function ProductList({ products }) {
 
   return (
     <div className="product-grid">
@@ -11,7 +10,6 @@ function ProductList({ onAddToCart }) {
         <ProductCard
           key={product.id}
           product={product}
-          onAddToCart={onAddToCart}
         />
       ))}
 
