@@ -1,13 +1,15 @@
 import { useState } from "react";
 import Header from "./components/Header";
-import ProductList from "./components/ProductList";
+import HomePage from "./components/HomePage";
 import CartSidebar from "./components/CartSidebar";
+import { products } from "./data/product.js/product.js";
 import "./styles/App.css";
 
 function App() {
 
   const [cart, setCart] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
 
   const addToCart = (product) => {
 
@@ -70,9 +72,17 @@ function App() {
       <Header
         cartItemCount={cartItemCount}
         onCartClick={() => setIsCartOpen(true)}
+        searchTerm={searchTerm}
+        onSearchChange={setSearchTerm}
       />
 
-      <ProductList onAddToCart={addToCart} />
+      <main className="main-content">
+        <HomePage 
+          products={products}
+          onAddToCart={addToCart}
+          searchTerm={searchTerm}
+        />
+      </main>
 
       <CartSidebar
         isOpen={isCartOpen}
