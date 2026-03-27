@@ -1,0 +1,66 @@
+.home-page {
+  width: 100%;
+}
+
+.search-results-info {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.search-results-info p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.search-results-info strong {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.no-products {
+  text-align: center;
+  padding: 60px 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.no-products h2 {
+  font-size: 2rem;
+  color: #667eea;
+  margin-bottom: 15px;
+}
+
+.no-products p {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .search-results-info {
+    padding: 12px 15px;
+    margin-bottom: 20px;
+  }
+
+  .search-results-info p {
+    font-size: 0.95rem;
+  }
+
+  .no-products {
+    padding: 40px 15px;
+  }
+
+  .no-products h2 {
+    font-size: 1.5rem;
+  }
+
+  .no-products p {
+    font-size: 1rem;
+  }
+}

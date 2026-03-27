@@ -1,12 +1,26 @@
-import React from 'react';
-import '../styles/Header.css';
+import "../styles/Header.css";
 
-function Header() {
+function Header({ cartItemCount, onCartClick, searchTerm, onSearchChange }) {
+
   return (
     <header className="header">
       <div className="header-container">
-        <h1 className="header-title">🛒 QuickCart</h1>
-        <p className="header-subtitle">Your one-stop shop for everything</p>
+        <h1 className="logo">🛒 QuickCart</h1>
+        
+        <input
+          type="text"
+          placeholder="Search products by name, category..."
+          className="search-input"
+          value={searchTerm}
+          onChange={(e) => onSearchChange(e.target.value)}
+        />
+        
+        <div className="cart-icon" onClick={onCartClick}>
+          🛒
+          {cartItemCount > 0 && (
+            <span className="cart-count">{cartItemCount}</span>
+          )}
+        </div>
       </div>
     </header>
   );
